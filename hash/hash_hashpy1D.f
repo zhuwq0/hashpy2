@@ -12,8 +12,8 @@ c variables for storing earthquake input information
       real seh, sez                 ! location error, horizontal & vertical 
 c
 c variables for polarity information, input to HASH subroutines
-      character*5 sname(npick0)                        ! station name
-      character*5 iname                                ! station name
+      character*15 sname(npick0)                        ! station name
+      character*15 iname                                ! station name
       character*1 pickpol                              ! polarity pick : U, u, +, D, d, or - ; onset, I or E
       integer p_pol(npick0),qp                         ! polarity pick (+/-1), and reversal (+/-1)
       real sp_ratio(npick0),spout(npick0)              ! log10(S/Pratio), S/P ratio
@@ -128,11 +128,11 @@ c read in polarities
        sname(k)=iname
        spout(k)=s2p
 c NonLinLoc station format
-c        call GETSTAT_NLL(stfile,sname(k),
-c     &               flat,flon,felv)
-c Geena's station format
-        call GETSTAT_GL(stfile,sname(k),
+        call GETSTAT_NLL(stfile,sname(k),
      &               flat,flon,felv)
+c Geena's station format
+c        call GETSTAT_GL(stfile,sname(k),
+c     &               flat,flon,felv)
         if (flat.eq.999.) go to 130
         dx=(flon-qlon)*111.2*aspect
         dy=(flat-qlat)*111.2

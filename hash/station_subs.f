@@ -131,7 +131,7 @@ c
      &                       flon,felev)
       parameter(nsta0=20000)
       character stlfile*100
-      character*4 snam,stname(nsta0)
+      character*15 snam,stname(nsta0)
       character*6 gtsrce,latlon
       real slat(nsta0),slon(nsta0),selev(nsta0),dep,ele
 c      real flat,flon,felev
