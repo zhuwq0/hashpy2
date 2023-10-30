@@ -247,7 +247,7 @@ c output takeoff angles
         write (15,560) sname(k),p_azi_mc(k,m),p_the_mc(k,m),p_pol(k),
      & spout(k),flag
 
-560   format (a5,1x,f6.2,2x,f6.2,2x,i2,2x,f8.4,2x,a10)
+560   format (a15,1x,f6.2,2x,f6.2,2x,i2,2x,f8.4,2x,a10)
       end do
       end do
 
